@@ -66,7 +66,7 @@ During the implementation and analysis of this assignment, we faced several chal
      - 8: Width of shift register (history bits)
      - 0: Not using XOR for indexing (0 = no, 1 = yes)
    - This configuration represents a GAp predictor with 1 global history register of 8 bits and a 1024-entry pattern history table
- 6. use a GCC 2.7.2.3 to compile the code
+ 6. **🖥️ use a GCC 2.7.2.3 to compile the code**
 
 ## 4. 📊 Output Samples
 
