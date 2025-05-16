@@ -1,4 +1,4 @@
-# 🖥️ Dynamic Branch Prediction Simulation Assignment - SimpleScalar
+# 🖥️ Dynamic Branch Prediction Simulation
 
 ## 📚 ELE336-Computer Architecture
 ## 👨‍🏫 DR. MAY MOHAMED
