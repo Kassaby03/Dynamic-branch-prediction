@@ -33,7 +33,9 @@ During the implementation and analysis of this assignment, we faced several chal
 
 3. **🧩 Correlating branch prediction implementation**: Understanding the specifics of the 2-level branch predictor configuration (1 1024 8 0) required careful study of the SimpleScalar documentation to interpret what these parameters meant for our simulation.
 
-4. compile a .C file to make it testable for simple scalar 
+4. **compile a .C file to make it testable for simple scalar**
+
+5. **static branch forward not taken backward taken** 
 
 ## 3. 💡 How We Solved Them
 
@@ -67,6 +69,17 @@ During the implementation and analysis of this assignment, we faced several chal
      - 0: Not using XOR for indexing (0 = no, 1 = yes)
    - This configuration represents a GAp predictor with 1 global history register of 8 bits and a 1024-entry pattern history table
  6. **🖥️ use a GCC 2.7.2.3 to compile the code**
+ 7. **we modify code in the bpred.c** ```if (btarget < baddr) {
+    dir_update_ptr->dir.bimod = TRUE;
+    dir_update_ptr->dir.twolev = TRUE;
+    dir_update_ptr->dir.meta = TRUE;
+    return btarget;  // Predict taken
+} else {
+    dir_update_ptr->dir.bimod = FALSE;
+    dir_update_ptr->dir.twolev = FALSE;
+    dir_update_ptr->dir.meta = FALSE;
+    return baddr + sizeof(md_inst_t);  // Predict not taken
+}```
 
 ## 4. 📊 Output Samples
 
@@ -602,7 +615,7 @@ mem.ptab_misses                  36 # total first level page table misses
 mem.ptab_accesses           9815228 # total page table accesses
 mem.ptab_miss_rate           0.0000 # first level page table miss rate
 ```
-### 🎯 Branch Prediction static prediction (forward taken backward not taken) stats
+### 🎯 Branch Prediction static prediction (forward not taken backward taken) stats
 ```
 sim-outorder: SimpleScalar/PISA Tool Set version 3.0 of August, 2003.
 Copyright (c) 1994-2003 by Todd M. Austin, Ph.D. and SimpleScalar, LLC.
