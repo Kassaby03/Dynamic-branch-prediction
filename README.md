@@ -304,7 +304,7 @@ $IDIR/simplesim-3.0/./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width
 $IDIR/simplesim-3.0/./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev.txt ./tests-pisa/bin.little/test.ss 
 ```
 ```bash
-./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l
+$IDIR/simplesim-3.0/./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l
 ```
 ---
 
@@ -1008,8 +1008,8 @@ mem.ptab_miss_rate           0.0000 # first level page table miss rate
    - Used the command line for 2-lev: `./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l`
    - Used the command line for bimod`sim: command line: ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev.txt ./tests-pisa/bin.little/test.ss `
    - Used the command line for static branch`sim: command line: ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred taken -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-backT-forN.txt ./tests-pisa/bin.little/test.ss`
-   - Used the command line for 2-lev 6-bit history:` ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 6 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist.txt ./tests-pisa/bin.little/test.ss `
-   -  - Used the command line for 2-lev 4-bit history:` ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 4 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist.txt ./tests-pisa/bin.little/test.ss `
+   - Used the command line for 2-lev 6-bit history:` ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 6 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist6.txt ./tests-pisa/bin.little/test.ss `
+   - Used the command line for 2-lev 4-bit history:` ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 4 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist4.txt ./tests-pisa/bin.little/test.ss `
    - Validated the configuration by checking simulator output for expected architecture details
 
 2. **📊 Simulator Output Interpretation**:
@@ -1114,4 +1114,4 @@ MARIOS MAGED
 
 HAGAR ALI
 
-HANA NABHAN
+HANA AHMED NABHAN
