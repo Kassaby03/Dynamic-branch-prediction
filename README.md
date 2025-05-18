@@ -778,37 +778,37 @@ if (btarget < baddr) {
 ## 📝 Conclusion
 
 **Bimodal Predictor:
-Direction prediction rate: 94.11%
-Misses: 20,452
-IPC (Instructions Per Cycle): 0.5921
-CPI (Cycles Per Instruction): 1.6889
+-Direction prediction rate: 94.11%
+-Misses: 20,452
+-IPC (Instructions Per Cycle): 0.5921
+-CPI (Cycles Per Instruction): 1.6889
 **2-Level Predictor:
-Direction prediction rate: 97.48%
-Misses: 8,732
-IPC: 0.6031
-CPI: 1.6582
-Static Prediction (Forward not taken, Backward taken):
-Direction prediction rate: 36.85%
-Misses: 219,359
-IPC: 0.4092
-CPI: 2.4436
+-Direction prediction rate: 97.48%
+-Misses: 8,732
+-IPC: 0.6031
+-CPI: 1.6582
+**Static Prediction (Forward not taken, Backward taken):
+-Direction prediction rate: 36.85%
+-Misses: 219,359
+-IPC: 0.4092
+-CPI: 2.4436
 Conclusion:
 
 **The 2-level predictor performs the best overall:
-Highest prediction accuracy (97.48%)
-Lowest number of misses (8,732)
-Best IPC (0.6031)
-Best CPI (1.6582)
+-Highest prediction accuracy (97.48%)
+-Lowest number of misses (8,732)
+-Best IPC (0.6031)
+-Best CPI (1.6582)
 **The bimodal predictor performs reasonably well:
-Good prediction accuracy (94.11%)
-Moderate number of misses (20,452)
-Good IPC (0.5921)
-Decent CPI (1.6889)
-The static predictor performs poorly:
-Very low prediction accuracy (36.85%)
-High number of misses (219,359)
-Poor IPC (0.4092)
-High CPI (2.4436)
+-Good prediction accuracy (94.11%)
+-Moderate number of misses (20,452)
+-Good IPC (0.5921)
+-Decent CPI (1.6889)
+-The static predictor performs poorly:
+-Very low prediction accuracy (36.85%)
+-High number of misses (219,359)
+-Poor IPC (0.4092)
+-High CPI (2.4436)
 The results clearly show that dynamic prediction (both 2-level and bimodal) significantly outperforms static prediction. The 2-level predictor's superior performance is due to its ability to capture more complex branch patterns by using both global and local branch history, while the bimodal predictor only uses local history. The static predictor's poor performance demonstrates that branch behavior is too complex to be predicted accurately using simple static rules.
 
 The impact on overall performance is significant - the 2-level predictor achieves about 47% better IPC than static prediction, demonstrating the importance of sophisticated branch prediction in modern processors
@@ -825,8 +825,8 @@ https://www.ecs.umass.edu/ece/koren/architecture/Simplescalar/SimpleScalar_intro
 ---
 
 ## 👥 Contributors
-OMAR AHMED ABDELAZIZ
-ALI MOHAMED ALI
-MARIOS MAGED
-HAGAR ALI
-HANA NABHAN
+-OMAR AHMED ABDELAZIZ
+-ALI MOHAMED ALI
+-MARIOS MAGED
+-HAGAR ALI
+-HANA NABHAN
