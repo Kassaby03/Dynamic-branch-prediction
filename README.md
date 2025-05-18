@@ -22,11 +22,11 @@ A simulation project that models and analyzes Dynamic branch prediction which is
 
 ## 💡 Acknowledgments
 
-**Use the SimpleScalar sim-outorder simulator to analyze branch prediction performance
-**implement a code and compile it  
-**Configure the simulator according to the specified parameters
-**implement a code for static forward not taken backward taken 
-**Analyze branch frequency, characterization, and prediction accuracy
+Use the SimpleScalar sim-outorder simulator to analyze branch prediction performance
+implement a code and compile it  
+Configure the simulator according to the specified parameters
+implement a code for static forward not taken backward taken 
+Analyze branch frequency, characterization, and prediction accuracy
 
 ---
 
