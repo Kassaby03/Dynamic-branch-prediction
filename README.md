@@ -306,6 +306,12 @@ $IDIR/simplesim-3.0/./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width
 ```bash
 $IDIR/simplesim-3.0/./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l
 ```
+```bash
+$IDIR/simplesim-3.0/./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 4 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist6.txt ./tests-pisa/bin.little/test.ss `
+```
+```bash
+$IDIR/simplesim-3.0/./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 6 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist6.txt ./tests-pisa/bin.little/test.ss `
+```
 ---
 
 ## 🧪 Testing and Validation
