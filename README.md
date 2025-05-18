@@ -725,9 +725,9 @@ mem.ptab_miss_rate           0.0000 # first level page table miss rate
 
 3. **🧩 Correlating branch prediction implementation**: Understanding the specifics of the 2-level branch predictor configuration (1 1024 8 0) required careful study of the SimpleScalar documentation to interpret what these parameters meant for our simulation.
 
-4. **compile a .C file to make it testable for simple scalar**
+4. **📝compile a .C file to make it testable for simple scalar**
 
-5. **static branch forward not taken backward taken** 
+5. **🧩static branch forward not taken backward taken** 
 
 ---
 
