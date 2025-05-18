@@ -169,7 +169,7 @@ make LANGUAGES=c CFLAGS=-O CC="gcc -m32" install
 ---
 
 
-Create a file `test.c`:
+Create a file `first.c`:
 ```c
 #include <stdio.h>
 int main() {
@@ -850,6 +850,142 @@ mem.ptab_misses                  36 # total first level page table misses
 mem.ptab_accesses           9839650 # total page table accesses
 mem.ptab_miss_rate           0.0000 # first level page table miss rate
 ```
+🎯 Branch Prediction 2-level stats 6-bit history
+
+```
+
+sim: ** simulation statistics **
+sim_num_insn                1379329 # total number of instructions committed
+sim_num_refs                 476172 # total number of loads and stores committed
+sim_num_loads                346548 # total number of loads committed
+sim_num_stores          129624.0000 # total number of stores committed
+sim_num_branches             347380 # total number of branches committed
+sim_elapsed_time                  1 # total simulation time in seconds
+sim_inst_rate          1379329.0000 # simulation speed (in insts/sec)
+sim_total_insn              1384944 # total number of instructions executed
+sim_total_refs               479096 # total number of loads and stores executed
+sim_total_loads              349462 # total number of loads executed
+sim_total_stores        129634.0000 # total number of stores executed
+sim_total_branches           348019 # total number of branches executed
+sim_cycle                   2294524 # total simulation time in cycles
+sim_IPC                      0.6011 # instructions per cycle
+sim_CPI                      1.6635 # cycles per instruction
+sim_exec_BW                  0.6036 # total instructions (mis-spec + committed) per cycle
+sim_IPB                      3.9707 # instruction per branch
+IFQ_count                   1883620 # cumulative IFQ occupancy
+IFQ_fcount                  1883620 # cumulative IFQ full count
+ifq_occupancy                0.8209 # avg IFQ occupancy (insn's)
+ifq_rate                     0.6036 # avg IFQ dispatch rate (insn/cycle)
+ifq_latency                  1.3601 # avg IFQ occupant latency (cycle's)
+ifq_full                     0.8209 # fraction of time (cycle's) IFQ was full
+RUU_count                   4584332 # cumulative RUU occupancy
+RUU_fcount                        0 # cumulative RUU full count
+ruu_occupancy                1.9979 # avg RUU occupancy (insn's)
+ruu_rate                     0.6036 # avg RUU dispatch rate (insn/cycle)
+ruu_latency                  3.3101 # avg RUU occupant latency (cycle's)
+ruu_full                     0.0000 # fraction of time (cycle's) RUU was full
+LSQ_count                   1779757 # cumulative LSQ occupancy
+LSQ_fcount                        0 # cumulative LSQ full count
+lsq_occupancy                0.7757 # avg LSQ occupancy (insn's)
+lsq_rate                     0.6036 # avg LSQ dispatch rate (insn/cycle)
+lsq_latency                  1.2851 # avg LSQ occupant latency (cycle's)
+lsq_full                     0.0000 # fraction of time (cycle's) LSQ was full
+sim_slip                    8210951 # total number of slip cycles
+avg_sim_slip                 5.9529 # the average slip between issue and retirement
+bpred_2lev.lookups           348967 # total number of bpred lookups
+bpred_2lev.updates           347380 # total number of updates
+bpred_2lev.addr_hits         338645 # total number of address-predicted hits
+bpred_2lev.dir_hits          338878 # total number of direction-predicted hits (includes addr-hits)
+bpred_2lev.misses              8502 # total number of misses
+bpred_2lev.jr_hits            18494 # total number of address-predicted hits for JR's
+bpred_2lev.jr_seen            18905 # total number of JR's seen
+bpred_2lev.jr_non_ras_hits.PP           46 # total number of address-predicted hits for non-RAS JR's
+bpred_2lev.jr_non_ras_seen.PP          448 # total number of non-RAS JR's seen
+bpred_2lev.bpred_addr_rate    0.9749 # branch address-prediction rate (i.e., addr-hits/updates)
+bpred_2lev.bpred_dir_rate    0.9755 # branch direction-prediction rate (i.e., all-hits/updates)
+bpred_2lev.bpred_jr_rate    0.9783 # JR address-prediction rate (i.e., JR addr-hits/JRs seen)
+bpred_2lev.bpred_jr_non_ras_rate.PP    0.1027 # non-RAS JR addr-pred rate (ie, non-RAS JR hits/JRs seen)
+bpred_2lev.retstack_pushes        18531 # total number of address pushed onto ret-addr stack
+bpred_2lev.retstack_pops        18554 # total number of address popped off of ret-addr stack
+bpred_2lev.used_ras.PP        18457 # total number of RAS predictions used
+bpred_2lev.ras_hits.PP        18448 # total number of RAS hits
+bpred_2lev.ras_rate.PP    0.9995 # RAS prediction rate (i.e., RAS hits/used RAS)
+il1.accesses                1452517 # total number of accesses
+il1.hits                    1389689 # total number of hits
+il1.vc_misses                     0 # total number of victim cache misses
+il1.vc_hits                       0 # total number of victim cache hits
+il1.misses                    62828 # total number of misses
+il1.replacements              62572 # total number of replacements
+il1.writebacks                    0 # total number of writebacks
+il1.invalidations                 0 # total number of invalidations
+il1.miss_rate                0.0433 # miss rate (i.e., misses/ref)
+il1.repl_rate                0.0431 # replacement rate (i.e., repls/ref)
+il1.wb_rate                  0.0000 # writeback rate (i.e., wrbks/ref)
+il1.inv_rate                 0.0000 # invalidation rate (i.e., invs/ref)
+dl1.accesses                 476172 # total number of accesses
+dl1.hits                     475677 # total number of hits
+dl1.vc_misses                     0 # total number of victim cache misses
+dl1.vc_hits                       0 # total number of victim cache hits
+dl1.misses                      495 # total number of misses
+dl1.replacements                239 # total number of replacements
+dl1.writebacks                  228 # total number of writebacks
+dl1.invalidations                 0 # total number of invalidations
+dl1.miss_rate                0.0010 # miss rate (i.e., misses/ref)
+dl1.repl_rate                0.0005 # replacement rate (i.e., repls/ref)
+dl1.wb_rate                  0.0005 # writeback rate (i.e., wrbks/ref)
+dl1.inv_rate                 0.0000 # invalidation rate (i.e., invs/ref)
+ul2.accesses                  63551 # total number of accesses
+ul2.hits                      62318 # total number of hits
+ul2.vc_misses                     0 # total number of victim cache misses
+ul2.vc_hits                       0 # total number of victim cache hits
+ul2.misses                     1233 # total number of misses
+ul2.replacements                215 # total number of replacements
+ul2.writebacks                   43 # total number of writebacks
+ul2.invalidations                 0 # total number of invalidations
+ul2.miss_rate                0.0194 # miss rate (i.e., misses/ref)
+ul2.repl_rate                0.0034 # replacement rate (i.e., repls/ref)
+ul2.wb_rate                  0.0007 # writeback rate (i.e., wrbks/ref)
+ul2.inv_rate                 0.0000 # invalidation rate (i.e., invs/ref)
+itlb.accesses               1452517 # total number of accesses
+itlb.hits                   1452503 # total number of hits
+itlb.vc_misses                    0 # total number of victim cache misses
+itlb.vc_hits                      0 # total number of victim cache hits
+itlb.misses                      14 # total number of misses
+itlb.replacements                 0 # total number of replacements
+itlb.writebacks                   0 # total number of writebacks
+itlb.invalidations                0 # total number of invalidations
+itlb.miss_rate               0.0000 # miss rate (i.e., misses/ref)
+itlb.repl_rate               0.0000 # replacement rate (i.e., repls/ref)
+itlb.wb_rate                 0.0000 # writeback rate (i.e., wrbks/ref)
+itlb.inv_rate                0.0000 # invalidation rate (i.e., invs/ref)
+dtlb.accesses                476172 # total number of accesses
+dtlb.hits                    476163 # total number of hits
+dtlb.vc_misses                    0 # total number of victim cache misses
+dtlb.vc_hits                      0 # total number of victim cache hits
+dtlb.misses                       9 # total number of misses
+dtlb.replacements                 0 # total number of replacements
+dtlb.writebacks                   0 # total number of writebacks
+dtlb.invalidations                0 # total number of invalidations
+dtlb.miss_rate               0.0000 # miss rate (i.e., misses/ref)
+dtlb.repl_rate               0.0000 # replacement rate (i.e., repls/ref)
+dtlb.wb_rate                 0.0000 # writeback rate (i.e., wrbks/ref)
+dtlb.inv_rate                0.0000 # invalidation rate (i.e., invs/ref)
+sim_invalid_addrs                 0 # total non-speculative bogus addresses seen (debug var)
+ld_text_base             0x00400000 # program text (code) segment base
+ld_text_size                  76288 # program text (code) size in bytes
+ld_data_base             0x10000000 # program initialized data segment base
+ld_data_size                   9008 # program init'ed `.data' and uninit'ed `.bss' size in bytes
+ld_stack_base            0x7fffc000 # program stack segment base (highest address in stack)
+ld_stack_size                 16384 # program initial stack size
+ld_prog_entry            0x004040b0 # program entry point (initial PC)
+ld_environ_base          0x7fff8000 # program environment base address address
+ld_target_big_endian              0 # target executable endian-ness, non-zero if big endian
+mem.page_count                   28 # total number of pages allocated
+mem.page_mem                   112k # total size of memory pages allocated
+mem.ptab_misses                  36 # total first level page table misses
+mem.ptab_accesses           9847132 # total page table accesses
+mem.ptab_miss_rate           0.0000 # first level page table miss rate
+```
 ---
 
 ## 🧩 Challenges Encountered
@@ -872,6 +1008,8 @@ mem.ptab_miss_rate           0.0000 # first level page table miss rate
    - Used the command line for 2-lev: `./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l`
    - Used the command line for bimod`sim: command line: ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev.txt ./tests-pisa/bin.little/test.ss `
    - Used the command line for static branch`sim: command line: ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred taken -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-backT-forN.txt ./tests-pisa/bin.little/test.ss`
+   - Used the command line for 2-lev 6-bit history:` ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 6 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist.txt ./tests-pisa/bin.little/test.ss `
+   -  - Used the command line for 2-lev 4-bit history:` ./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred 2lev -bpred:2lev 1 1024 4 0 -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim sim-2lev-hist.txt ./tests-pisa/bin.little/test.ss `
    - Validated the configuration by checking simulator output for expected architecture details
 
 2. **📊 Simulator Output Interpretation**:
